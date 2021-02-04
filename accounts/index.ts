@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
 
 import AccountsResolver from "./resolver";
@@ -13,7 +14,7 @@ export async function listen(port: number): Promise<string> {
     },
     {
       User: { __resolveReference: resolveUserReference },
-    },
+    }
   );
 
   const server = new ApolloServer({

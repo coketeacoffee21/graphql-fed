@@ -1,11 +1,11 @@
-import { Resolver, FieldResolver } from "../../../../src";
+import { Resolver, FieldResolver } from "type-graphql";
 
 import Review from "./review";
 import { reviews } from "./data";
 
-@Resolver(of => Review)
+@Resolver((of) => Review)
 export default class ReviewsResolver {
-  @FieldResolver(returns => [Review])
+  @FieldResolver((returns) => [Review])
   async reviews(): Promise<Review[]> {
     return reviews;
   }
